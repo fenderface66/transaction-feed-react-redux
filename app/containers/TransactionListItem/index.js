@@ -136,7 +136,6 @@ export class transactionListItem extends React.PureComponent { // eslint-disable
     this.props.filteredItems.map((filterId) => {
       if (itemId === filterId.id) {
         show = 'open';
-        console.log('MATCH');
       }
     })
     

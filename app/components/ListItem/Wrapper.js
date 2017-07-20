@@ -13,10 +13,6 @@ const Wrapper = styled.li`
   &:first-child {
     border-top: none;
   }
-  &:last-child {
-    padding-bottom: 80px;
-    height: auto;
-  }
 `;
 
 export default Wrapper;
