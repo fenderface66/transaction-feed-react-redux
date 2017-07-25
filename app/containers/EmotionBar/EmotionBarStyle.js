@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const EmotionBarStyle = styled.div`
   position: absolute;
   top: 110%;
-  right: 4px;     
-  
+  right: 22px;
+     
   z-index: 9;
   background-color: #f4f4f4;
   border-radius: 2px;
@@ -13,6 +13,9 @@ const EmotionBarStyle = styled.div`
   transition: .2s;
   &.open {
     transform: scale(1);
+  }
+  &.hasEmoji {
+    right: 4px;  
   }
 
   .close-icon {
@@ -54,7 +57,11 @@ const EmotionBarStyle = styled.div`
     padding-bottom: 6px;
   }
   @media (min-width: 450px) {
-    right: 37px;
+   
+    right: 56px;
+    &.hasEmoji {
+      right: 37px;
+    }
   }
 
 `;

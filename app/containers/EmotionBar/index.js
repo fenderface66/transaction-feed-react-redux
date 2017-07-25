@@ -35,14 +35,18 @@ export class EmotionBar extends React.PureComponent { // eslint-disable-line rea
   render() {
     
       var showState = '';
-    
+      var hasEmoji = '';
+      
       if (this.props.show === true) {
-        showState = 'open';
+        showState = 'open ';
+      }
+      if (this.props.emotion !== '') {
+        hasEmoji = 'hasEmoji'
       }
          
       return (
       
-      <EmotionBarStyle className={showState}>
+      <EmotionBarStyle className={showState + hasEmoji}>
         <ToolTipTop className="tooltip-top"/>
         <FaTimesCircle className='close-icon' onClick={() => this.props.toggleEmotionBar(this.props.id, false)}/>
         <ul className="no-list">
