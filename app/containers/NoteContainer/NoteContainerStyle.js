@@ -32,7 +32,7 @@ const NoteContainerStyle = styled.div`
   }
 
   @media (min-width: 450px) {
-    top: calc(50% + 60px);
+    top: 50%;
     width: 350px;
   }
     

@@ -6,7 +6,11 @@ const Wrapper = styled.li`
   display: none;
   align-items: center;
   position: relative;
-  border-top: 1px solid #eee;
+  border-bottom: 1px solid #94c6f1;
+  border-right: 1px solid #94c6f1;
+  border-left: 1px solid #94c6f1;
+  padding: 0 12px;
+  background-color: white;
   &.open {
     display: flex;
   }

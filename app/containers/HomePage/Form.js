@@ -4,9 +4,9 @@ const Form = styled.form`
 
   fieldset {
     border: 0px;
-    border-bottom: 1px solid #94c6f1;
     padding: 10px 0;
     display: inline-block;
+    margin-right: 12px;
     span, label {
       margin-right: 12px;
     }
@@ -17,6 +17,10 @@ const Form = styled.form`
     font-weight: 600;
   }
 
+  select {
+    margin-right: 12px;
+  }
+
   input[type="submit"] {
     background: #94c6f1;
     color: #fff;
@@ -25,7 +29,7 @@ const Form = styled.form`
     box-shadow: 5px 5px 5px #eee;
     text-shadow: none;
     padding: 5px 15px;
-    margin-top: 10px;
+    margin-bottom: 12px;
     margin-left: 2px;
     cursor: pointer;
     display: block;

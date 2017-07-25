@@ -35,7 +35,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
   }
 
   componentDidMount() {
-    this.props.onSubmitForm();
+    this.props.onLoad();
   }
   
   filterSwitch() {
@@ -44,7 +44,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       case 'description':
         return(
           <fieldset>
-            <label>Filter transactions by description:</label>
+            <label>Description:</label>
 
             <Input
               id="description-filter"
@@ -60,7 +60,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       case 'emotion':
         return (
           <fieldset>
-            <label>Select an Emotion:</label>
+            <label>Emotion:</label>
             <SelectInput name="emotion-filter" onChange={this.props.onfilterTransactions}>
               <option value='all'>Please Select Emotion</option>
               <option value="love">Love</option>
@@ -75,7 +75,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           return (
               <div>
                 <fieldset>
-                  <FormattedMessage {...messages.trymeMessage} />
+                  <label>Description:</label>
 
                     <Input
                       id="description-filter"
@@ -86,7 +86,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
 
                 </fieldset> 
                 <fieldset>
-                  <label>Select an Emotion</label>
+                  <label>Emotion</label>
                   <SelectInput name="emotion-filter">
 
                     <option value='all'>Please Select Emotion</option>
@@ -132,7 +132,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             </p>
           </CenteredSection>
           <Section>
-            <Form>
+            <Form onSubmit={this.props.onfilterTransactions}>
                 
                 <fieldset>
                   <label>Select a filter type:</label>
@@ -143,8 +143,6 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
                   </SelectInput>
                 </fieldset>
                 
-            </Form>
-            <Form onSubmit={this.props.onfilterTransactions}>
               {this.filterSwitch()}
             </Form>
             <TransactionsList {...transactionsListProps} />
@@ -165,13 +163,13 @@ HomePage.propTypes = {
     React.PropTypes.array,
     React.PropTypes.bool,
   ]),
-  onSubmitForm: React.PropTypes.func,
+  onLoad: React.PropTypes.func,
   onChangeUsername: React.PropTypes.func,
 };
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onSubmitForm: (evt) => {
+    onLoad: (evt) => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadTransactions());
     },
